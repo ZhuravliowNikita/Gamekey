@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gamekey</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <p><a href>GAMEKEY</a></p>
+      </div>
+      <div>
+        <ul>
+          <li class="new"><a href>Новинки</a></li>
+          <li class="discount"><a href>Знижки</a></li>
+          <li class="waiting"><a href>Очікуванні</a></li>
+        </ul>
+      </div>
+      <div class="input">
+        <input type="text" placeholder="Napishi 4e te nado ?" id="mySearch" />
+      </div>
+      <div class="search">
+        <div class="logo-search">
+          <img
+            src="Images/Search.jpg"
+            alt="Search Button"
+            width="35px"
+            height="35px"
+          />
+        </div>
+      </div>
+      <div class="logo-basket">
+        <img
+          src="Images/Basket.jpg"
+          alt="Basket Button"
+          width="40px"
+          height="40px"
+        />
+      </div>
+    </div>    
+    <div class="game-describe">
+      <div class="game-describe-top">
+      
+        <div class="orange-square">
+
+        </div>
+        <div class="game-photo">
+          <img 
+            src="Images/GamePhoto.jpg" 
+            width=394px;
+            height=450px;
+            alt="StrayGame"
+            />
+            
+        </div>
+        <div class="game-info">
+          <div class="game-name" style="padding: 29px;">
+            <p>STRAY </p>
+          </div>
+          <div class="game-price-cart">
+            <div>
+              <button class="button-cart">До кошика</button>
+            </div>
+
+            <div class="game-price">
+              <p>300 ₴</p>
+            </div>
+          </div>
+          <div class="game-type">
+            <table style="width:100%; text-align:left; align-items:start; margin-left: 29px;">
+              <tr>
+                <th>Жанр</th>
+                <td>Пригоди, Інді</td>
+              </tr>
+              <tr>
+                <th>Платформа</th>
+                <td>PC</td>
+              </tr>
+              <tr>
+                <th>Дата виходу</th>
+                <td>19.07.2022</td>
+              </tr>
+              <tr>
+                <th>Видавець</th>
+                <td>Annapurna Interactive</td>
+              </tr>
+              <tr>
+                <th>Розробник</th>
+                <td>BlueTwelve Studiox</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="game-describe-bottom">
+        <div style="width: 316px;height: 450px;">
+        </div>
+        <div class="description">
+          <p class ="about">Про цю гру</p>
+          <p class ="definition">Stray – гра про світ, який давно загинув і живі істоти в ньому намагаються якось існувати. 
+            Кітик виконує роль провідника який заглядає в різні куточки залишків цивілізації і так ми 
+            споглядаємо маленькі та великі історії цього світу.</p>
+        </div>
+        <div class="screenshot">
+          <p>Скрiншоти</p>
+          <div id="carousel" class="carousel">
+            <button class="arrow prev">⇦</button>
+            <div class="gallery">
+              <ul>
+                <li><img src="Images/image.png"></li>
+                <li><img src="Images/image2.png"></li>
+                <li><img src="Images/image3.png"></li>
+              </ul>
+            </div>
+            <button class="arrow next">⇨</button>
+            
+            
+          
+          </div>
+        </div>
+      </div>  
+    </div>
+    <script>
+      let i = 1;
+      for(let li of carousel.querySelectorAll('li')) {
+        li.style.position = 'relative';
+        li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
+        i++;
+      }
+  
+      let width = 130; 
+      let count = 3; 
+  
+      let list = carousel.querySelector('ul');
+      let listElems = carousel.querySelectorAll('li');
+  
+      let position = 0; 
+  
+      carousel.querySelector('.prev').onclick = function() {
+        // сдвиг влево
+        position += width * count;
+        // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+        position = Math.min(position, 0)
+        list.style.marginLeft = position + 'px';
+      };
+  
+      carousel.querySelector('.next').onclick = function() {
+        // сдвиг вправо
+        position -= width * count;
+        // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+        position = Math.max(position, -width * (listElems.length - count));
+        list.style.marginLeft = position + 'px';
+      };
+    </script>
+  </body>
+  <!-- <script src="js/scripts.js"></script> -->
+</html>
